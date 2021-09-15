@@ -1,0 +1,12 @@
+---
+- name: installing multiple pkgs
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: task1 installin pkgs
+      yum:
+        name: ['git', 'wget', 'tree', 'telnet', 'make']
+        enabled: true
+        status: installed
+

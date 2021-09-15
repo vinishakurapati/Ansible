@@ -1,0 +1,10 @@
+---
+- name: installing packages and service start-2 tasks
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+    - name: task1 installing httpd service
+      yum:
+        name: httpd
+        status: installed
